@@ -1,47 +1,38 @@
-function makeActive1() {
-	document.getElementById('js-1').classList.toggle('-active')
-	// setTimeout(document.getElementById('js-1').classList.toggle('-active'), 1000)
-}
+let status = 'stop'
 
-function removeActive1(){
-	document.getElementById('js-1').classList.remove('-active')
-}
+const stopLight = document.getElementById('js-1');
+const warningLight = document.getElementById('js-2');
+const moveLight = document.getElementById('js-3');
 
-function makeActive2() {
-	document.getElementById('js-2').classList.toggle('-active')
-	// setTimeout(document.getElementById('js-1').classList.toggle('-active'), 1000)
-}
+setInterval(function(){
 
-function removeActive2(){
-	document.getElementById('js-2').classList.remove('-active')
-}
+	stopLight.classList.remove('-active');
+	warningLight.classList.remove('-active');
+	moveLight.classList.remove('-active');
+	
+	if (status==='stop'){
+		stopLight.classList.add('-active');
+		warningLight.classList.remove('-active');
+		moveLight.classList.remove('-active');
 
-function makeActive3() {
-	document.getElementById('js-3').classList.toggle('-active')
-	// setTimeout(document.getElementById('js-1').classList.toggle('-active'), 1000);
-}
+		status='before_move';
+	} else if (status==='before_move'){
+		stopLight.classList.add('-active');
+		warningLight.classList.add('-active');
+		moveLight.classList.remove('-active');
 
-function removeActive3(){
-	document.getElementById('js-3').classList.remove('-active')
-}
+		status='move';
+	} else if (status==='move') {
+		stopLight.classList.remove('-active');
+		warningLight.classList.remove('-active');
+		moveLight.classList.add('-active');
 
-function trafficControl(){
-makeActive1()
-// makeActive2()
-// makeActive3()
-setTimeout(removeActive1, 2000);
-setTimeout(clearInterval(), 2000);
+		status='warning';
+	} else if (status==='warning') {
+		stopLight.classList.remove('-active');
+		warningLight.classList.add('-active');
+		moveLight.classList.remove('-active');
 
-setTimeout(makeActive2, 1000);
-setTimeout(removeActive2, 2000);
-setTimeout(clearInterval(), 2000);
-
-setTimeout(makeActive3, 2000);
-setTimeout(removeActive3, 3000);
-setTimeout(clearInterval(), 2000);
-
-setTimeout(makeActive2, 3000)
-setTimeout(removeActive2, 4000)
-}
-
-setInterval(trafficControl, 4000)
+		status='stop';
+	};
+}, 1000);
