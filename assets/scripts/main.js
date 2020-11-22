@@ -8,7 +8,7 @@ function removeActive1(){
 }
 
 function makeActive2() {
-	document.getElementById('js-1').classList.toggle('-active')
+	document.getElementById('js-2').classList.toggle('-active')
 	// setTimeout(document.getElementById('js-1').classList.toggle('-active'), 1000)
 }
 
@@ -17,7 +17,7 @@ function removeActive2(){
 }
 
 function makeActive3() {
-	document.getElementById('js-1').classList.toggle('-active')
+	document.getElementById('js-3').classList.toggle('-active')
 	// setTimeout(document.getElementById('js-1').classList.toggle('-active'), 1000);
 }
 
