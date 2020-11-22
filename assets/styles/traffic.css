@@ -1,0 +1,53 @@
+.section{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.trafficBody{
+	padding: 10px 30px;
+	width: 240px;
+	height: 450px;
+
+	background-color: #121212;
+
+	border: 8px #242424 solid;
+	border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.light{
+	width: 120px;
+	height: 120px;
+
+	border-radius: 100px;
+}
+
+.-red.-active{
+	background-color: #e60000;
+}
+
+.-red{
+	background-color: #600;
+}
+
+.-yellow.-active{
+	background-color: #f0d000;
+}
+
+.-yellow{
+	background-color: #574b00;
+}
+
+.-green.-active{
+	background-color: #00c410;
+}
+
+.-green{
+	background-color: #003d05;
+}
